@@ -37,9 +37,9 @@ Created by [Michael Peacock](http://www.michaelpeacock.co.uk)
 	$dispatcher = new \CentralApps\Mail\Dispatcher($transport);
 	
 	// Create a sender
-	$sender = new \CentralApps\Mail\SendersReceiversEtc\Sender("michael@peacocknet.co.uk", "Michael Peacock");
+	$sender = new \CentralApps\Mail\SendersReceiversEtc\Sender("sender@domain.com", "Sender Name");
 	// Create a recipient
-	$recipient = new \CentralApps\Mail\SendersReceiversEtc\Recipient("mkpeacock@gmail.com", "Michael Peacock");
+	$recipient = new \CentralApps\Mail\SendersReceiversEtc\Recipient("recipient@domain.com", "Recipient Name");
 	
 	// Create a message
 	$message = new \CentralApps\PostMarkApp\Message();
