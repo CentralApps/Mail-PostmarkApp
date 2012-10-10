@@ -5,7 +5,7 @@
     "keywords": ["mail","email", "postmarkapp"],
     "require": {
         "php": ">=5.3.0",
-        "centralapps/mail": "dev-master"
+        "centralapps/mail-core": "dev-master"
     },
     "autoload": {
         "psr-0": { "CentralApps\\PostMarkApp": "" }
