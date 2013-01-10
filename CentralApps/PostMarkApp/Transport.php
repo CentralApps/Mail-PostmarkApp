@@ -130,7 +130,6 @@ class Transport implements \CentralApps\Mail\Transport {
 		$response = curl_exec($ch);
 		$error = curl_error($ch);
 		$cleaned_response = json_decode( $response );
-		echo '<pre>' . print_r($response,true) . '</pre>';
 		if( curl_getinfo($ch, \CURLINFO_HTTP_CODE) == 200 )
 		{
 			return true;
