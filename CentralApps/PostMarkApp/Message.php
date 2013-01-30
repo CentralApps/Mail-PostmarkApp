@@ -51,7 +51,7 @@ class Message extends \CentralApps\Mail\Message {
 				if($attachment->isReadable()) {
 					$attachment['Name'] = $attachment->getFilename();
 					$attachment['Content'] = base64_decode(file_get_contents($attachment->getPath() . '/' . $attachment->getFileName() ) );
-					$attachment['ContentType'] = array_key_exists($attachment->getExtension,$this->permittedAttachmentTypes) ? $this->permittedAttachmentTypes[$attachment->getExtensio()] : 'application/octet-stream';
+					$attachment['ContentType'] = array_key_exists($attachment->getExtension(),$this->permittedAttachmentTypes) ? $this->permittedAttachmentTypes[$attachment->getExtension()] : 'application/octet-stream';
 					$attachments[] = $attachment;
 				}
 			}
