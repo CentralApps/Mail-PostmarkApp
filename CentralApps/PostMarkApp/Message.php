@@ -49,10 +49,11 @@ class Message extends \CentralApps\Mail\Message {
 			$attachments = array();
 			foreach($this->attachments as $attachment ) {
 				if($attachment->isReadable()) {
-					$attachment['Name'] = $attachment->getFilename();
-					$attachment['Content'] = base64_decode(file_get_contents($attachment->getPath() . '/' . $attachment->getFileName() ) );
-					$attachment['ContentType'] = array_key_exists($attachment->getExtension(),$this->permittedAttachmentTypes) ? $this->permittedAttachmentTypes[$attachment->getExtension()] : 'application/octet-stream';
-					$attachments[] = $attachment;
+					$email_attachment = array();
+					$email_attachment['Name'] = $attachment->getFilename();
+					$email_attachment['Content'] = base64_encode(file_get_contents($attachment->getPath() . '/' . $attachment->getFileName() ) );
+					$email_attachment['ContentType'] = array_key_exists($attachment->getExtension(),$this->permittedAttachmentTypes) ? $this->permittedAttachmentTypes[$attachment->getExtension()] : 'application/octet-stream';
+					$attachments[] = $email_attachment;
 				}
 			}
 			$sendable['Attachments'] = $attachments;
